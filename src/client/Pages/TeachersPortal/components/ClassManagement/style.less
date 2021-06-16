@@ -1,0 +1,74 @@
+
+.flex {
+  display:flex;
+}
+.my-class {
+  width: 420px;
+  max-width: 95%;
+  background-color: #e3e8ec;
+
+  .class-title {
+    display: flex;
+    width: 100%;
+    background: #6699ff;
+    justify-content: space-between;
+    padding: 25px 30px;
+    p {
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .class-member {
+    display: flex;
+    margin:0px 0px 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+    .member-name {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-right: auto;
+    }
+    .member-ac {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .member-state {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      width: 12%;
+      padding-top: 12%;
+      border-radius: 50%;
+      margin-right: 30px;
+      background-color: #728089;
+      .member-state-number {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 11px;
+        background-color: #fff;
+        color: #1073af;
+        font-weight: 500;
+        top: -4px;
+        right: -4px;
+      }
+    }
+    .state-active {
+      background-color: #1073af;
+    }
+  }
+  .member-active {
+    color: #1073af;
+    background-color: white;
+  }
+}
+.message{
+  padding:50px;
+  width:100%;
+  font-size: 24px;
+  text-align: center;
+}

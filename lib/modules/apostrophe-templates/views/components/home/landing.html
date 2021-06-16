@@ -1,0 +1,204 @@
+{% import 'apostrophe-templates:components/home/mailchimp.html' as mailchimp with context %}
+
+{% macro base(data) %}
+  <main>
+    <div class="news_intro">
+      <div class="left_side">
+        <h3>The news our <br/> students deserve.</h3>
+        <p>
+          The Bites content platform gives 6-12th 
+          grade educators and students trusted 
+          digital news that deepens engagement 
+          and the critical thinking required to 
+          become literate media consumers.
+        </p>
+        <div class="landing_btn">
+          <div class="browse_content">
+            <a href="/categories">Browse Content</a>
+          </div>
+          <div class="try_free">
+            <a href="/signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div class="right_side">
+        <div class="image_ground">
+          <img src="/images/intro.png">
+        </div>
+      </div>
+    </div>
+    <div class="our_subject">
+      <h2>Our Subjects</h2>
+      <div class="subjects">
+        <div class="subfield">
+          <a href="/categories?category=science-and-technology">
+            <img src="/images/tech.png" />
+            <p>Science & Tech</p>
+          </a>
+        </div>
+        <div class="subfield">
+          <a href="/categories?category=law-and-politics">
+            <img src="/images/politics.png" />
+            <p>Law & Politics</p>
+          </a>
+        </div>
+        <div class="subfield">
+          <a href="/categories?category=sports-and-health">
+            <img src="/images/sports.png" />
+            <p>Sports & Health</p>
+          </a>
+        </div>
+        <div class="subfield life">
+          <a href="/categories?category=life-and-arts">
+            <img src="/images/life.png" />
+            <p>Life & Arts</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="how_works">
+      <h2>How it Works</h2>
+      <div class="vital">
+        <div class="accessible">
+          <h3>Vital News That's <br /> Accessible</h3>
+          <p>
+            Teachers quickly browse our library,
+            updated weekly, and assign succinct
+            articles covering the most pressing and
+            engaging issues of our time
+          </p>
+          <h4>
+            Students engage with Bites<br>
+            <a>3x more</a> <br>
+            than traditional news
+          </h4>
+        </div>
+        <div class="vital_img">
+          <img src="/images/vital.png"/>
+        </div>
+      </div>
+      <div class="media">
+        <div class="media_img">
+          <img src="/images/multi_media.png"/>
+        </div>
+        <div class="multi_media">
+          <h3>Multi-Media, <br /> Multi-Perspective</h3>
+          <p>
+            Students dive into a multi-media Bites
+            article that accommodates their
+            personalized learning style and presents
+            two competing mainstream
+            interpretations of the facts
+          </p>
+        </div>
+        <div class="hidden_media_img">
+          <img src="/images/multi_media.png"/>
+        </div>
+      </div>
+      <div class="meaningful">
+        <div class="meaningful_data">
+          <h3>Meaningful <br /> Data</h3>
+          <p>
+            Educators and administrators get
+            individual and group-wide data to make
+            smarter instructional choices and stay
+            accountable
+          </p>
+        </div>
+        <div class="meaningful_img">
+          <img src="/images/meaningful.png"/>
+        </div>
+      </div>
+    </div>
+    <div class="what_saying">
+      <div class="saying_h2">What They're <br />Saying</div>
+      <div class="slider_section">
+        <section class="text_slider slider">
+          <div class="slider_item" data-index="0">
+            <h5>5TH GRADER IN COLUMBUS, OH</h5>
+            <p>
+              "I found it very interesting and I had
+              a great conversation over the ethics
+              with my teacher."
+            </p>
+          </div>
+          <div class="slider_item" data-index="1">
+            <h5>7TH GRADER IN NEW YORK CITY, NY</h5>
+            <p>
+              "I liked it because it wasn’t too long,
+              but I still got a lot of information
+              out of it."
+            </p>
+          </div>
+          <div class="slider_item" data-index="2">
+            <h5>ELL TEACHER IN BOSTON, MA</h5>
+            <p>
+              "Before Bites Media, I found myself
+              collecting 3-4 articles on each topic
+              I wanted to use in classroom discussion."
+            </p>
+          </div>
+        </section>
+        <button class="left"><img src="/images/left_icon.png"/></button>
+        <button class="right"><img src="/images/right_icon.png"/></button>
+      </div>
+    </div>
+    <div class="difference">
+      <h2>The Bites Difference</h2>
+      <div class="difference_side">
+        <div class="learning">
+          <h2>Differentiated <br /> Learning</h2>
+          <p>
+            Bites uses the principles and
+            guidelines of Universal Design
+            for Learning to systematically engage
+            students across multiple
+            modes of representation.
+          </p>
+        </div>
+        <div class="neutral">
+          <h2>Neutral <br /> Perspective</h2>
+          <p>
+            Each Bites article is built around
+            two mainstream viewpoints. By
+            comparing multiple perspectives,
+            students become independent
+            and critical thinkers.
+          </p>
+        </div>
+        <div class="efficient">
+          <h2>Efficient <br /> Preparation</h2>
+          <p>
+            No more rewriting or supplementing
+            current events content - Bites saves
+            teachers time and effort every day.
+            On average, educators spend 15 minutes
+            to search and assign classroom-ready articles.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      {{ mailchimp.base(data) }}
+    </div>
+    <div class="reading_lorem">
+      <div class="justify_left">
+        <img src="/images/b_logo.png" />
+        <div class="description">
+          <h2>Start reading today.</h2>
+          <p>Sign up now.</p>
+        </div>
+      </div>
+      <div class="try_free">
+        <a href="/signup">Sign Up</a>
+      </div>
+    </div>
+  </main>
+{% endmacro %}
+
+{% macro positionedImage(article, loop) %}
+  {%- set image = apos.images.first(article.marqueeImage) or null -%}
+  <div class="image_div{{loop.index0}}">
+    <img class="img{{loop.index0}}" alt="{% block imgAlt %}{{ image.title }}{% endblock %}" data-image src="{% block imgSrc %}{{ apos.attachments.url(image, { size: data.options.size, crop: image._crop }) }}{% endblock %}" />
+  </div>
+{% endmacro %}

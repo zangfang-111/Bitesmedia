@@ -1,0 +1,87 @@
+{% macro base(page, piece) %}
+{% if page.type === 'apostrophe-blog-page' %}
+  <div class="bt-header-block "></div>
+{% endif %}
+  <div id="header" class="bt-header {% if page.type === 'apostrophe-blog-page' %} bt-header--fixed{% endif %} {% if data.user %} bt-header-blueback {% endif %}">
+    <div class="bt-inner">
+      <div class="cf sticky">
+        <div class="fl w-auto">
+          <a href="/{% if data.user._permissions.teacher %}teachers-portal{% endif %}">
+            {% if data.user %}
+            <img class="bt-logo" src="/images/bites_logo_bw.png" height="60" alt="BitesMedia Logo">
+            {% else %}
+            <img class="bt-logo-alternate" src="/images/bites_logo_bw.png" alt="BitesMedia Logo">
+            {% endif %}
+          </a>
+        </div>
+
+        <div class="fr ml3">
+          {% if data.user %}
+          <div class="header_style_user">
+            <div class="bt-header__user">
+              {{ module.fullNameToInitials(data.user.title) }}
+              <div class="bt-header__user__menu">
+                <a href="/logout">Logout</a>
+              </div>
+            </div>
+          </div>
+          {% else %}
+            <div class="header_style">
+              <div class="header_button">
+                <a class="browse_content" href="/categories">Browse Content</a>
+                <a href="/about-us">About Us</a>
+                <a href="/login">
+                  <div class="sign_in">
+                    <p>Sign In</p>
+                  </div>
+                </a>
+                <a href="/signup">
+                  <div class="free_trial">
+                    <p>Sign Up</p>
+                  </div>
+                </a>
+              </div>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <img src="/images/menu.png" />
+                </button>
+                <div class="dropdown-content">
+                  <a href="/categories">Browse Content</a>
+                  <a href="/about-us">About Us</a>
+                  <a href="/login">Sign In</a>
+                  <a href="/signup">Sign Up</a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        {% if page.type === 'apostrophe-blog-page'  %}
+          <div class="w-auto speach-area">
+            <a id="highlight-icon"><img src="/images/header_icon2.png"></a>
+            <a id="highlight-icon-1" style="display: none"><img src="/images/header_icon2_1.png"></a>
+            <a id="write-note"><img src="/images/header_icon3.png"></a>
+            <img id="bt-text-to-speach-button" class="bt-text-to-speach-button dim pointer" src="/images/bites_text-to-speach-icon.png" alt="">
+          </div>
+          <div class="w-auto">
+            <div id="bt-text-to-speach"></div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if page.type === 'apostrophe-blog-page' %}
+      <div class="bt-progress-bar">
+        <div class="bt-inner">
+          <div class="cf bt-progress-bar-container">
+            <div class="bt-progress-bar__title">
+              {{ piece.title }}
+            </div>
+            <div class="bt-progress-bar__container">
+              <div class="bt-progress-bar__empty"></div>
+              <div class="bt-progress-bar__percent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}

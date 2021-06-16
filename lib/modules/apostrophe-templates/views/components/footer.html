@@ -1,0 +1,46 @@
+{% macro base(page, piece) %}
+  {% if page.type === 'apostrophe-blog-page' %}
+    <div class="bt-footer-block "></div>
+  {% endif %}
+    <div class="bt-footer">
+      <div class="bt-inner row">
+        <div class="left_side">
+          <h3>Brain food, <br /> powered by Bites</h3>
+          <div class="bottom_menu">
+            <a href="/about-us">About Us</a>
+            <a href="/about-us">Contact Us</a>
+            <a href="/categories">Browse Content</a>
+            <a href="/login">Sign In</a>
+          </div>
+        </div>
+        <div class="right_side">
+          {% if page.type === 'signUp' %}
+            <div class="try_free">
+              <a href="/login">Sign In</a>
+            </div>
+          {% else %}
+            {% if data.user %}
+            {% else %}
+              <div class="try_free">
+                <a href="/signup">Sign Up</a>
+              </div>
+            {% endif %}
+          {% endif %}
+          <h3>Connect with us on:</h3>
+          <div class="social_login">
+            <div><a href="https://www.facebook.com/bitesnews/" target="_blank"><img src="/images/social-media-icons/facebook.png" /></a></div>
+            <div><a href="https://twitter.com/bites_media" target="_blank"><img src="/images/social-media-icons/twitter.png" /></a></div>
+            <div><a href="https://www.instagram.com/bitesmedia/" target="_blank"><img src="/images/social-media-icons/instagram.png" /></a></div>
+            <div><a href="https://www.linkedin.com/company/bitesmedia.com/" target="_blank"><img src="/images/social-media-icons/linkedin.png" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="project_info">
+        <p>© Bites Media 2018</p>
+        <div class="privacy">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-use">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,147 @@
+.comment {
+  padding-top: 13px;
+}
+
+.answer {
+  padding-bottom: 20px;
+  text-align: right;
+  padding-top: 15px;
+}
+
+.question {
+  padding-top: 10px;
+  padding-left: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.q_text {
+  width: 80%;
+  line-height: 1.25em;
+}
+
+.btn_true {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  // background-image: url("../../img/true.png");
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.btn_true:active {
+  width: 27px;
+  height: 27px;
+  margin-right: 9.5px;
+  margin-left: 1.5px;
+}
+
+.btn_false {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  // background-image: url("../../img/false.png");
+  background-size: 100%;
+}
+
+.btn_false:active {
+  width: 27px;
+  height: 27px;
+  margin-right: 1.5px;
+  margin-left: 1.5px;
+}
+
+.check_panel {
+  display: flex;
+  width: 30%;
+  @media (max-width: 900px) {
+    width: 33%;
+  }
+  @media (max-width: 700px) {
+    width: 35%;
+  }
+  @media (max-width: 500px) {
+    width: 40%;
+  }
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.correct_label, .correctNum_label {
+  color: #7ed321;
+}
+
+.incorrect_label {
+  color: #ee7171;
+}
+
+.evaluation {
+  text-align: right;
+  margin-top: 14px;
+  font-size: 20px;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #b3b3b3;
+}
+
+th {
+  padding: 10px;
+  border: 1px solid #b3b3b3;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+td {
+  border: 1px solid #b3b3b3;
+  padding: 10px;
+}
+.saveBtn {
+  width: 150px;
+  height: 35px;
+  color: white;
+  font-size: 19px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: #33afdf;
+  text-transform: uppercase;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 0;
+
+}
+
+.dialog {
+  width: 60%;
+  @media(max-width: 1650px) {
+    width: 70%
+  }
+  @media(max-width: 1450px) {
+    width: 80%
+  }
+  @media(max-width: 1250px) {
+    width: 90%
+  }
+  @media(max-width: 1150px) {
+    width: 100%
+  }
+  margin: auto;
+
+  .MuiDialog-paperWidthLg-20 {
+    width: 100%;
+  }
+  .form-dialog-title {
+    width: 100%;
+  }
+  .dialog_content {
+    width: 100%
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "bitesmedia-v1",
+  "scripts": {
+  },
+  "env": {
+    "APOS_MONGODB_URI": {
+      "required": true
+    },
+    "APOS_S3_BUCKET": {
+      "required": true
+    },
+    "APOS_S3_KEY": {
+      "required": true
+    },
+    "APOS_S3_REGION": {
+      "required": true
+    },
+    "APOS_S3_SECRET": {
+      "required": true
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "MONGODB_URI": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "mongolab"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
